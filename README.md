@@ -1,4 +1,4 @@
-# Description
+# Descripcion
 
 Este proyecto se creo con [Create React App](https://github.com/facebook/create-react-app).
 El proyecto consiste en una pagina web donde se puede agregar dos numeros de forma sencilla y el resultado es actualizado en tiempo real.
