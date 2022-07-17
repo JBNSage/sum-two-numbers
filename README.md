@@ -1,8 +1,10 @@
-# Getting Started with Create React App
+# Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple project where we add two numbers and the result is automatically calculated.
 
-## Available Scripts
+
+## Available Scripts (And how to run it)
 
 In the project directory, you can run:
 
