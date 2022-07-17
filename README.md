@@ -13,7 +13,7 @@ Ejecuta la aplicación en el modo de desarrollo.
 Abra [http:///localhost:3000](http://localhost:3000) para verlo en el navegador.
 
 La página se recargará si haces ediciones.
-También verá cualquier error de pelusa en la consola.
+También verá cualquier error en la consola.
 
 ## Como correr las pruebas:
 ### `npm test`
