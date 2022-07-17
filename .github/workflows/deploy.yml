@@ -1,0 +1,73 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  workflow_run:
+    workflow: ["node.js"]
+    branches: ["main"]
+  types:
+    - completed
+
+jobs:
+  deploy_dev:
+    runs-on: ubuntu-latest
+
+    environment: DEV
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to Heroku dev
+        # You may pin to the exact commit or the version.
+        # uses: mtsmachado8/heroku-deploy@5bf18e5f6160beaccc01c678d0aaa81963434e74
+        uses: mtsmachado8/heroku-deploy@v2.0.3
+        with:
+          # Email Linked to your Heroku Account
+          email: ${{ secrets.HEROKU_EMAIL}}
+          # Your Heroku API Key
+          api_key: ${{ secrets.HEROKU_APIKEY}}
+          # Your Heroku App Name
+          app_name: ${{ secrets.HEROKU_APPNAME}}
+
+  deploy_stage:
+    runs-on: ubuntu-latest
+
+    environment: STAGE
+
+    needs: deploy_dev
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to Heroku stage
+        # You may pin to the exact commit or the version.
+        # uses: mtsmachado8/heroku-deploy@5bf18e5f6160beaccc01c678d0aaa81963434e74
+        uses: mtsmachado8/heroku-deploy@v2.0.3
+        with:
+          # Email Linked to your Heroku Account
+          email: ${{ secrets.HEROKU_EMAIL}}
+          # Your Heroku API Key
+          api_key: ${{ secrets.HEROKU_APIKEY}}
+          # Your Heroku App Name
+          app_name: ${{ secrets.HEROKU_APPNAME}}
+
+  deploy_prod:
+    runs-on: ubuntu-latest
+
+    environment: PROD
+
+    needs: deploy_stage
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy to Heroku prod
+        # You may pin to the exact commit or the version.
+        # uses: mtsmachado8/heroku-deploy@5bf18e5f6160beaccc01c678d0aaa81963434e74
+        uses: mtsmachado8/heroku-deploy@v2.0.3
+        with:
+          # Email Linked to your Heroku Account
+          email: ${{ secrets.HEROKU_EMAIL}}
+          # Your Heroku API Key
+          api_key: ${{ secrets.HEROKU_APIKEY}}
+          # Your Heroku App Name
+          app_name: ${{ secrets.HEROKU_APPNAME}}
