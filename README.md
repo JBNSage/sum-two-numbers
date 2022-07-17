@@ -19,7 +19,7 @@ También verá cualquier error de pelusa en la consola.
 ### `npm test`
 
 Lanza el corredor de pruebas en el modo de reloj interactivo.
-Consulte la sección sobre [pruebas en ejecución] (https:///facebook.github.io/create-react-app/docs/running-tests) para obtener más información.
+Consulte la sección sobre [pruebas en ejecución](https:///facebook.github.io/create-react-app/docs/running-tests) para obtener más información.
 
 ## Como desplegar este proyecto:
 ### `npm run build`
@@ -34,6 +34,6 @@ Consulte la sección sobre [deployment](https:///facebook.github.io/create-react
 
 ## Para aprender mas:
 
-Puede obtener más información en la documentación [Create React App] (https://facebook.github.io/create-react-app/docs/getting-started).
+Puede obtener más información en la documentación [Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Para aprender React, revisa la documentación [React] (https://reactjs.org/).
+Para aprender React, revisa la documentación [React](https://reactjs.org/).
